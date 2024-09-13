@@ -6,3 +6,6 @@ COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 #docker  build -t  micro .
 #docker run -p 8080:8080 micro
+#docker login
+#docker tag micro  allamchz/micro:latest
+#docker push allamchz/micro:latest

@@ -19,6 +19,7 @@ public class PersonaController {
 
     @GetMapping("/persona")
     ResponseEntity <List<Persona>> getPersonas(){
+
         return ResponseEntity.ok(personaRepository.findAll());
     }
     @PostMapping("/persona")
@@ -37,6 +38,8 @@ public class PersonaController {
 
     @GetMapping("/persona/{id}")
     ResponseEntity<Persona> getPersona(@PathVariable("id") Long id) {
+
+
         Optional<Persona> optional = personaRepository.findById(id);
         return optional.map((persona)->ResponseEntity.ok(persona))
                 .orElseGet(() -> ResponseEntity.notFound().build());
