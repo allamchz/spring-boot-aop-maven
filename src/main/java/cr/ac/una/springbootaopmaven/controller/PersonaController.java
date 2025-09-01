@@ -41,7 +41,7 @@ public class PersonaController {
 
 
         Optional<Persona> optional = personaRepository.findById(id);
-        return optional.map((persona)->ResponseEntity.ok(persona))
+        return optional.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
 
     }
