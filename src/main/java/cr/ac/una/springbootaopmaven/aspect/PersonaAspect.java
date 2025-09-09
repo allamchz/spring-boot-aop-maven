@@ -20,13 +20,13 @@ public class PersonaAspect {
 
     @After("execution(* cr.ac.una.springbootaopmaven.controller.PersonaController.*(..))")
     public void logAfterV1(JoinPoint joinPoint) {
-        logger.info("Antes de ejecutar cualquier método del controller : " + joinPoint.getSignature().getName());
+        logger.info("Después de de ejecutar cualquier método del controller : " + joinPoint.getSignature().getName());
 
     }
 
     @Before("execution(* cr.ac.una.springbootaopmaven.controller.PersonaController.*(..))")
     public void logAfterV2(JoinPoint joinPoint) {
-        logger.info("Después de ejecutar cualquier método del controller :  " + joinPoint.getSignature().getName());
+        logger.info("Antes de  ejecutar cualquier método del controller :  " + joinPoint.getSignature().getName());
 
     }
 }

@@ -14,5 +14,5 @@ public class Persona {
     @Id
     Long id;
     String nombre;
-    int edad;
+    String apellido;
 }

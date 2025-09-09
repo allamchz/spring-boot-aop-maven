@@ -22,9 +22,15 @@ public class PersonaController {
 
         return ResponseEntity.ok(personaRepository.findAll());
     }
+
+
     @PostMapping("/persona")
      ResponseEntity<Persona> savePersona(@RequestBody Persona persona){
         return ResponseEntity.ok(personaRepository.save(persona));
+
+
+
+
     }
     @PutMapping ("persona")
     ResponseEntity<Persona> updatePersona(@RequestBody  Persona persona){
@@ -38,7 +44,6 @@ public class PersonaController {
 
     @GetMapping("/persona/{id}")
     ResponseEntity<Persona> getPersona(@PathVariable("id") Long id) {
-
 
         Optional<Persona> optional = personaRepository.findById(id);
         return optional.map(ResponseEntity::ok)
